@@ -1,0 +1,49 @@
+# Project: 1.24
+# Makefile created by Dev-C++ 5.10
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Test0.o Test1.o Test2.o Test3.o Test4.o Test5.o Test6.o Test7.o
+LINKOBJ  = Test0.o Test1.o Test2.o Test3.o Test4.o Test5.o Test6.o Test7.o
+LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = 1.24.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Test0.o: Test0.cpp
+	$(CC) -c Test0.cpp -o Test0.o $(CFLAGS)
+
+Test1.o: Test1.cpp
+	$(CC) -c Test1.cpp -o Test1.o $(CFLAGS)
+
+Test2.o: Test2.cpp
+	$(CC) -c Test2.cpp -o Test2.o $(CFLAGS)
+
+Test3.o: Test3.cpp
+	$(CC) -c Test3.cpp -o Test3.o $(CFLAGS)
+
+Test4.o: Test4.cpp
+	$(CC) -c Test4.cpp -o Test4.o $(CFLAGS)
+
+Test5.o: Test5.cpp
+	$(CC) -c Test5.cpp -o Test5.o $(CFLAGS)
+
+Test6.o: Test6.cpp
+	$(CC) -c Test6.cpp -o Test6.o $(CFLAGS)
+
+Test7.o: Test7.cpp
+	$(CC) -c Test7.cpp -o Test7.o $(CFLAGS)
